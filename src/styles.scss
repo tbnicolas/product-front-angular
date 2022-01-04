@@ -1,1 +1,89 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+/* input{
+    width: 401px;
+    height: 41px;
+    border-radius: 6px;
+    
+} */
+
+input::focus {
+    border-color: red;
+}
+
+.custom-input{
+    display: block;
+    width: 401px;
+    height: 41px;
+    border-radius: 6px;
+    border: 1px solid black;
+    padding-left: 10px; 
+
+    &:focus {
+        outline: none !important;
+        border:1px solid #6534d9;
+        box-shadow: 1px 1px 2px grey;
+    }
+    
+}
+
+.auth-right-side{
+    height: 100vh;
+    //background-color: red;
+    padding-top: 30vh;
+}
+
+.custom-button{
+    margin-top: 40px;
+    text-decoration: none;
+    padding: 10px 65px;
+    border: 1px solid #6534d9 ;
+    background-color: #6534d9;
+    color: white;
+    border-radius: 20px;
+    &:last-child{
+        margin-left: 34px;
+    }
+    &:hover{
+        background-color: darken($color: #6534d9, $amount: 10);;
+        color: white;
+
+    }
+}
+
+.loader {
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #6534d9; /* Blue */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
+
+.btn-disable{
+cursor: not-allowed;
+pointer-events: none;
+
+/*Button disabled - CSS color class*/
+color: #c0c0c0;
+background-color: #ffffff;
+
+}

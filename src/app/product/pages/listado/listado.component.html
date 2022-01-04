@@ -1,0 +1,33 @@
+
+<div *ngIf="products.length > 0; else alerta">
+
+    <div *ngFor="let product of products; let i = index;" class="mb-4">
+        <h1>Producto #{{ i + 1 }}</h1>
+        <hr>
+    
+        <p>Nombre: {{ product.nombre }}</p>
+        <p>Descripcion: {{ product.descripcion }}</p>
+    
+        <button (click)="eliminar(product.id)" 
+                class="btn btn-danger"
+        >
+            Eliminar
+        </button>
+    
+        <button (click)="actualizar(product.id)"
+                class="btn btn-success mx-3"
+        >
+            Actualizar 
+        </button>
+    
+    </div>
+
+</div>
+
+<ng-template #alerta>
+    <div class="alert alert-warning">
+        No existen productos aún 
+    </div>
+</ng-template>
+
+<div *ngIf="isLoading" class="loader"></div>

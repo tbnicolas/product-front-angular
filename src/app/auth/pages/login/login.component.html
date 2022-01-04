@@ -1,0 +1,46 @@
+
+<div class="row">
+    <div class="col-6">
+        <img src="../../../../assets/auth.svg"
+             alt="auth-image"
+             style="width:100%; height:100%"
+        >
+    </div>
+    <div class="col-6 auth-right-side">
+        <h3>Welcome</h3>
+        <span>Login to continue</span>
+        <form (ngSubmit)="auth()">
+
+            <input 
+                class="custom-input mb-4 mt-4"
+                type="email"
+                name="email"
+                [(ngModel)]= "authForm.email"
+                placeholder="Correo"
+            >
+            <input 
+                class="custom-input"
+                type="password"
+                name="password"
+                [(ngModel)]= "authForm.password"
+                placeholder="Contraseña"
+                
+            >
+            
+            <div class="mt-4"></div>
+
+            <button 
+                [class]="enableOrDisableButton()"
+                type="submit"
+            >
+             Login
+          </button>
+           <a 
+              [class]="enableOrDisableButton()"
+           >
+               Register
+        </a>
+        </form>
+    </div>
+</div>
+<div *ngIf="isLoading" class="loader"></div>

@@ -1,0 +1,27 @@
+<form (ngSubmit)="crearProducto()">
+    <div class="form-group mb-4">
+        <label for="productName">Nombre del producto</label>
+        <input 
+        type="text"
+        class="form-control"
+        name="nombre"
+        [(ngModel)]="crearFromulario.nombre"
+        id="productName">
+    </div>
+    <div class="form-group mb-4">
+        <label for="descriptionArea">Descripcion del producto</label>
+        <textarea  
+         type="text"
+         class="form-control"
+         name="descripcion"
+         id="descriptionArea"
+         [(ngModel)]="crearFromulario.descripcion"
+         rows="15">
+        </textarea>
+    </div>
+    <button type="submit" [class]="enableOrDisableButton()">
+         Guardar
+     </button>
+</form>
+
+<div *ngIf="isLoading" class="loader"></div>
